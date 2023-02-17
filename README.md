@@ -6,6 +6,7 @@ Arduino library for DAC7574 quad 12-bit digital to analog converter with I2C int
 ## Simple Usage
 You declare an instance of the part using `DAC7574 dac;`
 The `dac.begin(address)` is used to initialize the instance to use the I2C address and the default I2C channel, `Wire`.
+Note that only two bits of address corresponding to the settings of the A0, A1 pins for the part are required (i.e., address is in 0..3). The remaining 5 bits of the 7-bit I2C address are a constant and are provided by the library.
 The simplest use case is when each channel is individually programmed using `dac.setData(v, channel)`.  This can be seen in the example `dac7574_nano_test`.
 
 ## Syncronized Channel Setting
