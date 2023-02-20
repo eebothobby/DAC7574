@@ -39,7 +39,7 @@ void setup() {
 }
 
 void loop() {
-  char buf[32];
+  char buf[48];
   uint16_t aval[4];
   // Set the 4 dac channels
   dac0.setBuffer(val[0], 0);

@@ -29,7 +29,7 @@ void setup() {
 }
 
 void loop() {
-  char buf[32];
+  char buf[48];
   uint16_t aval[4];
   // Set the 4 dac channels synchronously
   dac.setDataAll(val[0], val[1], val[2], val[3]);

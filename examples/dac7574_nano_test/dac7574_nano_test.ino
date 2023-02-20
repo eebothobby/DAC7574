@@ -7,7 +7,8 @@
  * Print the values output on the 4 DAC channels and the values input from the  
  * corresponding 4 analog pins.
  * 
- * NOTE: Ardfuino nano ADC has a 10-bit resolution
+ * NOTE: Ardfuino nano ADC has a 10-bit resolution, other microcontrollers
+ * have analog inputs with highe resolution.
  * 
  * DAC           Arduino
  * A (pin1)  -> A0
@@ -36,7 +37,7 @@ void setup() {
 }
 
 void loop() {
-  char buf[32];
+  char buf[48];
   uint16_t aval[4];
   // Set the 4 dac channels
   for (uint8_t i = 0; i < 4; i++) {
