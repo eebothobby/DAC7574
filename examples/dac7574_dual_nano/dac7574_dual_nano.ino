@@ -18,7 +18,6 @@
  * from each DAC.
  */
 
-#include <Wire.h>
 #include <DAC7574.h>
 
 DAC7574 dac0, dac1;
