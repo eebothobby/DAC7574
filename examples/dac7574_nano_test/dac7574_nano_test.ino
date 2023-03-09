@@ -17,7 +17,6 @@
  * D (pin5)  -> A3
  */
 
-#include <Wire.h>
 #include <DAC7574.h>
 
 DAC7574 dac;
