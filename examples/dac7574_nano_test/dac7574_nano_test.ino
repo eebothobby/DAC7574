@@ -35,6 +35,9 @@ void setup() {
   // If using Wire2
   // Wire2.begin();
   // Wire2.setClock(400000L);
+  
+  // Where available, e.g on STM32 "blue pill" or "black pill", enable 12-bit resolution
+  // analogReadResolution(12);
 
   // Assuming A1, A0 for the part are 0, can be 0..3
   dac.begin(0);
