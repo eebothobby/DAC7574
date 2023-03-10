@@ -19,6 +19,10 @@
 
 #include <DAC7574.h>
 
+// If using an I2C bus that is different from default Wire,
+// for example SDA2 = PB3, SCL2 = PB10 on STM32F411-based "black pill"
+// TwoWire Wire2(PB3, PB10);
+
 DAC7574 dac;
 
 uint16_t val[4] = {0, 1024, 2048, 3072}; 
@@ -27,9 +31,15 @@ int apin[4] = {A0, A1, A2, A3};
 void setup() {
   Wire.begin();
   Wire.setClock(400000L);
+  
+  // If using Wire2
+  // Wire2.begin();
+  // Wire2.setClock(400000L);
 
   // Assuming A1, A0 for the part are 0, can be 0..3
   dac.begin(0);
+  // If using Wire2
+  // dac.begin(0, &Wire2);
   Serial.begin(115200);
   while(!Serial)
   Serial.println("Ready.\n");
