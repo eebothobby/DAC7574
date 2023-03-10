@@ -25,4 +25,12 @@ This is done using `dacx.setBuffer(v, channel)` for each of the 4 channels on bo
 The Arduino Wire library declares a global instance of `TwoWire` named `Wire` and this library uses that by default.
 But if you plan to use a different instance of TwoWire, you can pass that instance in when you call `dac.begin(address, twire)`.
 
-TODO: I don't yet have an example of using a different instance of TwoWire and I haven't tested this case.
+For example, to use the 2nd I2C bus on a STM32F411-based "Black Pill" board, use:
+
+`TwoWire Wire2(PB3, PB10); // SDA2 is PB3, SCL2 is PB10`
+
+And in setup() call:
+
+`Wire2.begin();`
+
+`dac.begin(0, &Wire2); // A1,A0 = 0, can be 0..3`
